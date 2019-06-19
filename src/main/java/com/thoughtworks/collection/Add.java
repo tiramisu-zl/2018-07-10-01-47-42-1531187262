@@ -5,8 +5,21 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import java.util.List;
 
 public class Add {
-    public int getSumOfEvens(int leftBorder, int rightBorder) {
-        throw new NotImplementedException();
+    public int getSumOfEvens(int leftBorder, int rightBorder) { // if right < left
+        int count = 0;
+        int start = leftBorder;
+        int end = rightBorder;
+
+        if(leftBorder > rightBorder){
+            start = rightBorder;
+            end = leftBorder;
+        }
+        for (int i = start; i <= end; i++) {
+            if(i%2 == 0){
+                count += i;
+            }
+        }
+        return count;
     }
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
